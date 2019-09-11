@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>学生管理系统</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="shortcut icon" href="./image/logo.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo"><img src="./image/logo.png" alt=""><span>渡一教育</span></div>
+        </div>
+        <div class="leftMenu">
+            <dl id="menuList">
+                <dt>学生管理系统</dt>
+                <dd class="active list" data-id="studentList">学生列表</dd>
+                <dd data-id="addStudent">新增学生</dd>
+            </dl>
+        </div>
+        <div class="rightContent">
+            <div class="studentList content contentActive" id="studentList">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>学号</th>
+                            <th>姓名</th>
+                            <th>性别</th>
+                            <th>邮箱</th>
+                            <th>年龄</th>
+                            <th>手机号</th>
+                            <th>地址</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>    
+                    <tbody id="tbody"></tbody>
+                </table>
+                <div id="pageContent" class="pageContent">
+                    <span>每页<select class="selectList"><option value="1" selected>1</option><option value="5">5</option><option value="10">10</option><option value="15">15</option><option value="20">20</option></select>条</span>
+                    <span class="pageBtn">&lt;</span>
+                    <ul class="pageIndexList">
+                        <li data-index="1">1</li>
+                        <li data-index="2">2</li>
+                        <li data-index="3">3</li>
+                        <li data-index="4">4</li>
+                        <li data-index="5">5</li>
+                    </ul>
+                    <span class="pageBtn">&gt;</span>
+                    <span>跳转到<input type="text" class="gotoPageIndex">页</span>
+                    <span><i class="nowIndex">1</i>/<i class="totalPage">4</i>页</span>
+                </div>
+                <div class="modal">
+                    <div class="mask"></div>
+                    <div class="maskContent">
+                        <h2>编辑信息</h2>
+                        <form id="editStudentForm">
+                            <div><label for="name">姓名</label><input type="text" id="name" name="name"></div>
+                            <div>
+                                <label for="">性别</label>
+                                <input type="radio" id="male" name="sex" value="0">
+                                <label for="male" class="sex">男</label>
+                                <input type="radio" id="female" name="sex" value="1">
+                                <label for="female" class="sex">女</label>
+                            </div>
+                            <div><label for="sNo">学号</label><input type="text" id="sNo" name="sNo"></div>
+                            <div><label for="email">邮箱</label><input type="text" id="email" name="email"></div>
+                            <div><label for="birth">出生年</label><input type="text" id="birth" name="birth"></div>
+                            <div><label for="phone">手机号</label><input type="text" id="phone" name="phone"></div>
+                            <div><label for="address">地址</label><input type="text" id="address" name="address"></div>
+                            <div class="btns"><label for="">&nbsp;</label><input type="submit" id="editSubmit" value="提交"><input type="reset"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="addStudent  content" id="addStudent">
+                <form id="addStudentForm">
+                    <div><label for="add-name">姓名</label><input type="text" id="add-name" name="name"></div>
+                    <div>
+                        <label for="">性别</label>
+                        <input type="radio" id="add-male" name="sex" checked value="0">
+                        <label for="add-male" class="sex">男</label>
+                        <input type="radio" id="add-female" name="sex" value="1">
+                        <label for="add-female" class="sex">女</label>
+                    </div>
+                    <div><label for="add-sNo">学号</label><input type="text" id="add-sNo" name="sNo"></div>
+                    <div><label for="add-email">邮箱</label><input type="text" id="add-email" name="email"></div>
+                    <div><label for="add-birth">出生年</label><input type="text" id="add-birth" name="birth"></div>
+                    <div><label for="add-phone">手机号</label><input type="text" id="add-phone" name="phone"></div>
+                    <div><label for="add-address">地址</label><input type="text" id="add-address" name="address"></div>
+                    <div class="btns"><label for="">&nbsp;</label><input type="submit" value="提交" id="addSubmit"><input type="reset"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./js/studentPage.js"></script>
+    <!-- <script src="./js/index.js"></script> -->
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jQueryIndex.js"></script>
+</body>
+
+</html>
